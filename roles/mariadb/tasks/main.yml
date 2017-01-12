@@ -26,6 +26,3 @@
 
 - name: 6b. Restart Apache
   service: name=apache2 state=restarted
-
-- name: 7. install Hello World PHP script with database
-  copy: src=db.php dest=/var/www/html/db.php mode=0664
