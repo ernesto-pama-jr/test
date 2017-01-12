@@ -1,8 +1,13 @@
 ---
-- name: 1. Remove apache default folder
-  file: path=/var/www/html state=absent
+- name: 1. Check html folder exist
+  stat: path=/var/www/html
+  register: html_exist
 
-- name: 2. Get the source codes through git
+- name: 2. Remove apache default html folder when it exist
+  file: path=/var/www/html state=absent
+  when: html_exist.stat.exists == True
+
+- name: 3. Get the source codes through git
   git:
       repo: https://github.com/ernesto-pama-jr/lamp-test.git
       dest: /var/www/html
