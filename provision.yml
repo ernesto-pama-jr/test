@@ -5,3 +5,4 @@
     - apache2
     - mariadb
     - git
+    - symfony2
