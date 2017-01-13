@@ -6,6 +6,6 @@ node { // <1>
         /* .. snip .. */
     }
     stage('Deploy') {
-        /* .. snip .. */
+        ansiblePlaybook credentialsId: 'jenkins-ssh-key', inventory: '/var/ansible/test/hosts', playbook: '/var/ansible/test/deployment.yml'
     }
 }
