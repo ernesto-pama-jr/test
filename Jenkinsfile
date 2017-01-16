@@ -1,4 +1,7 @@
 node { // <1>
+    stage('Provision') { // <2>
+        /* .. snip .. */
+    }
     stage('Build') { // <2>
         /* .. snip .. */
     }
